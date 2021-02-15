@@ -22,20 +22,13 @@ var date = new Date();
 var statusCode;
 
 // Routers
-app.get('/servers', UserNofications, async (req, res) => {
-    // Code: Selecionar todos os torneios com Max Players > Players inscritos 
-    // Code: Se estiver cheio retornar "Lotado"
-
-    //statusCode = await Select.AvailableServers() ? 200 : 400;
-
-    res.sendStatus(200);
-});
-
 app.post('/server', async (req, res) => {
-    let {name, passowrd, nPlayers} = req.body;
+    let {name, password, nPlayers} = req.body;
     
+    console.log(password)
+
      // Code: Lembrar que o SRVIDCREATOR será passado através de uma session
-    statusCode = await Create.CreateServer(name, nPlayers, passowrd, 1) ? 200 : 400;
+    statusCode = await Create.CreateServer(name, nPlayers, password, 1) ? 200 : 400;
 
     res.sendStatus(statusCode);
 });

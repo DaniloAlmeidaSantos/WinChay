@@ -22,6 +22,9 @@ module.exports = {
                 .table('wnservers')
                 .then(data => {
                     var result = (data.length != 0) ? true : false;
+
+                    console.log(result)
+
                     return result;
                 })
                 .catch(err => {
@@ -32,6 +35,9 @@ module.exports = {
                 .table('wnservers')
                 .then(data => {
                     var result = (data.length != 0) ? true : false;
+
+                    console.log(result)
+
                     return result;
                 })
                 .catch(err => {
@@ -41,12 +47,12 @@ module.exports = {
         }
     },
 
-    async AlterServer(id, name, nPlayers, passowrd, ) {
+    async AlterServer(id, name, nPlayers, passowrd) {
         // Checking if parameters is not undefined
         const isSomeParameterUndefined = [name, nPlayers].includes(undefined);
         
         // Checking if exists password
-        var passwdCheck = (password) ? true : false;
+        var passwdCheck = (passowrd) ? true : false;
 
         if (isSomeParameterUndefined) {
             return false;

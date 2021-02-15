@@ -24,11 +24,12 @@ app.use(session({
 // Routers
 const UserLogin = require('./Controller/Users/UserLogin'); 
 const UserRegister = require('./Controller/Users/UserRegister');
-const SelectServer = require('./Controller/Server/ServerCreate') 
+const ServerGet = require('./Controller/Server/ServerGet') 
+const ServerCreate = require('./Controller/Server/ServerCreate');
 
 app.use('/', UserLogin);
 app.use('/', UserRegister);
-app.use('/', SelectServer);
-
+app.use('/', ServerGet);
+app.use('/', ServerCreate);
 
 app.listen(port, () => console.log(`WebApiWinChay is running`));

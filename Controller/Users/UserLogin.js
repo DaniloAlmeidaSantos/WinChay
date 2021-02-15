@@ -25,7 +25,7 @@ app.post('/User/authenticate', async (req, res) => {
     console.log("Verificando retorno de verificação: ", statusCode);
 
     if (statusCode == 200) {
-        // Code
+        req.session.notify = [];
     } else {
         // Code
     }
